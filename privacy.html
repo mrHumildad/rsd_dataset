@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retro Soccer Dealer — Terms of Service &amp; Privacy Policy</title>
+  <meta name="description" content="Terms of Service and Privacy Policy for Retro Soccer Dealer — the retro football trading game. No tracking, no cookies, no server backend." />
+  <meta name="theme-color" content="#0F100D" />
+  <!-- Asset paths are deliberately relative, not root-absolute: this file is
+       served from more than one place — the frozen web build under
+       /retro-soccer-dealer/, the Android WebView at localhost/, and the public
+       policy URL in the rsd_dataset repo — and `href="/favicon.ico"` 404s in
+       every one of them except the WebView. The icons sit next to this file. -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <style>
+    :root {
+      --bg: #0F100D;
+      --panel: #1A2318;
+      --panel-dark: #131A12;
+      --gold: #D6B15B;
+      --gold-light: #F0D28B;
+      --cream: #F5E7B7;
+      --text-muted: rgba(245, 231, 183, 0.6);
+      --border: #8E6C2F;
+      --border-soft: rgba(142, 108, 47, 0.35);
+      --font-display: 'JetBrains Mono', 'Cascadia Mono', 'Consolas', monospace;
+      --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    header.masthead {
+      text-align: center;
+      padding: 1.5rem 0 1rem;
+      border-bottom: 1px solid var(--border-soft);
+      margin-bottom: 2rem;
+    }
+
+    header.masthead .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin: 0 0 0.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .masthead .subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .updated {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.25rem 0.85rem;
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      color: var(--gold);
+    }
+
+    .notice {
+      background: var(--panel-dark);
+      border: 1px solid var(--border-soft);
+      border-left: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0 0 1.5rem;
+    }
+
+    .notice strong { color: var(--cream); }
+
+    nav.toc {
+      background: var(--panel);
+      border: 1px solid var(--border-soft);
+      border-radius: 18px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 2.5rem;
+    }
+
+    nav.toc h2 {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin: 0 0 0.6rem;
+    }
+
+    nav.toc ul { margin: 0; padding: 0 0 0 1.1rem; }
+    nav.toc li { margin: 0.25rem 0; }
+    nav.toc a { color: var(--cream); text-decoration: none; }
+    nav.toc a:hover, nav.toc a:focus { color: var(--gold-light); text-decoration: underline; }
+
+    section.doc > h2 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 0.5rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      color: var(--gold);
+      margin: 1.6rem 0 0.4rem;
+    }
+
+    p { margin: 0.6rem 0; }
+    ul { margin: 0.6rem 0; padding-left: 1.4rem; }
+    li { margin: 0.3rem 0; }
+
+    a { color: var(--gold-light); }
+    a:hover { color: var(--gold); }
+
+    strong { color: var(--gold-light); font-weight: 600; }
+    em { color: var(--cream); }
+
+    code {
+      font-family: var(--font-display);
+      font-size: 0.85em;
+      background: var(--panel-dark);
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+      padding: 0.1em 0.4em;
+      color: var(--gold-light);
+      white-space: nowrap;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--border-soft);
+      padding: 0.55rem 0.7rem;
+    }
+
+    th {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      background: var(--panel-dark);
+    }
+
+    td code { white-space: normal; }
+
+    .summary {
+      margin-top: 2.5rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      font-size: 0.95rem;
+    }
+
+    .summary h2 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin: 0 0 0.6rem;
+    }
+
+    .summary p { color: var(--text-muted); margin: 0; }
+
+    footer.site-footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-soft);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer.site-footer p { margin: 0.3rem 0; }
+
+    @media (max-width: 480px) {
+      .page { padding: 1.25rem 1rem 3rem; }
+      table { font-size: 0.84rem; }
+      th, td { padding: 0.45rem 0.5rem; }
+    }
+
+    @media print {
+      body { background: #fff; color: #111; }
+      .page { max-width: none; }
+      nav.toc, .notice { background: #f5f5f5; border-color: #ccc; }
+      h1, h2, h3, strong, a, td code { color: #111; }
+      th { color: #111; background: #eee; }
+      .summary, td, th { color: #222; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <img class="logo" src="android-chrome-192x192.png" alt="Retro Soccer Dealer logo" width="64" height="64" />
+      <h1>Retro Soccer Dealer</h1>
+      <p class="subtitle">Terms of Service &amp; Privacy Policy</p>
+      <span class="updated">Last updated: September 18, 2026</span>
+    </header>
+
+    <div class="notice">
+      <strong>This page is static.</strong> It sets no cookies, loads no analytics,
+      and makes no third-party requests — not even web fonts. What the
+      <em>game</em> does with data is described in the Privacy Policy below;
+      this page itself does nothing at all.
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#terms">Terms of Service</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- TERMS OF SERVICE                                             -->
+    <!-- ============================================================ -->
+    <section class="doc" id="terms">
+      <h2>Terms of Service</h2>
+
+      <h3 id="t1">1. What it is</h3>
+      <p>
+        A hobbyist trading-game engine, free on Google Play, with every feature
+        available to everyone — including importing your own dataset (a ZIP of
+        CSVs and images).
+      </p>
+
+      <h3 id="t2">2. No copyrighted content</h3>
+      <p>
+        We ship none: no real player names, clubs, crests, photos or databases,
+        and no licence for any of them. The built-in dataset is procedurally
+        generated fiction, and the game is not affiliated with any football
+        body, league, club or player.
+      </p>
+
+      <h3 id="t3">3. Your data is your responsibility</h3>
+      <p>
+        Imported datasets stay on your device; the game never uploads or shares
+        them. What you import, use or share — and having the rights to do so —
+        is on you.
+      </p>
+
+      <h3 id="t4">4. Licence</h3>
+      <p>
+        Personal, non-commercial use. Don't reverse-engineer the game to bypass
+        its paid unlocks, and don't sell it or pass it off as your own.
+      </p>
+
+      <h3 id="t5">5. Purchases</h3>
+      <p>
+        Optional paid unlocks (the Android app's “Full Upgrades”) are never
+        required: everything they grant can also be earned by playing. Prestige
+        Points (PP) are progression only — no cash value, no transfer, no
+        randomness, no wagering. Google Play handles
+        payment and refunds, under its own policy and without limiting your
+        statutory rights; unlocks are tied to that store account, and the store
+        can restore non-consumable purchases. The one optional rewarded ad
+        (WATCH AD in the Agency, 1 PP, once per 30 minutes) is never required
+        either.
+      </p>
+
+      <h3 id="t6">6. As-is</h3>
+      <p>
+        Provided without warranty of any kind, and to the extent the law allows,
+        we're not liable for indirect or consequential damages from using it.
+      </p>
+
+      <h3 id="t7">7. Changes &amp; contact</h3>
+      <p>
+        Material changes show in the date at the top of this page; continued use
+        means you accept them. Reach us through the game's Google Play listing.
+      </p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- PRIVACY POLICY                                               -->
+    <!-- ============================================================ -->
+    <section class="doc" id="privacy">
+      <h2>Privacy Policy</h2>
+
+      <h3 id="p1">1. On your device only</h3>
+      <p>
+        No server backend, and nothing is sent anywhere by the game.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Storage</th><th>What we store</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>localStorage</strong></td>
+            <td>
+              <code>rsd_disclaimer_accepted_v4</code>,
+              <code>rsd_tutorial_seen_v3</code>,
+              <code>rsd_lang</code>,
+              <code>rsd_active_dataset</code>,
+              <code>rsd_prestige_v1</code> (Agency balance, upgrades, stats, ad
+              cooldown), <code>retro_soccer_highscores_…</code>, the auto-saved
+              game, and two housekeeping flags.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>IndexedDB</strong></td>
+            <td>Datasets you import (CSVs + images) and a cache of <code>default.zip</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 id="p2">2. What it fetches</h3>
+      <p>
+        <code>default.zip</code>, the built-in fictional dataset, on load;
+        imported ZIPs come from your own device. The only other request is an
+        ad, and only when you tap it.
+      </p>
+
+      <h3 id="p3">3. The rewarded ad</h3>
+      <p>
+        One ad, never a banner or interstitial, and never requested unless you
+        tap WATCH AD. It's served by <strong>Google AdMob</strong> through the
+        Google Mobile Ads SDK, and Google may collect device and advertising
+        identifiers (such as your Android advertising ID), approximate location
+        derived from your IP, and ad interaction data to select and measure ads.
+        We never see it, and no game data goes with the request. Where the law
+        requires it (EEA/UK) the SDK asks for consent first — decline and no ad
+        is requested. Google's own policy and controls apply
+        (<a href="https://policies.google.com/privacy" rel="noopener noreferrer">policies.google.com/privacy</a>,
+        <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">policies.google.com/technologies/ads</a>);
+        on Android you can reset or delete your advertising ID and turn off ad
+        personalisation in <strong>Settings → Privacy → Ads</strong>.
+      </p>
+
+      <h3 id="p4">4. What it doesn't do</h3>
+      <p>
+        No cookies, analytics, telemetry, fingerprinting, cross-site tracking or
+        profiling, and no sending your stored data off the device. No other
+        third-party ad or analytics code is bundled.
+      </p>
+
+      <h3 id="p5">5. Payments</h3>
+      <p>
+        Google Play collects the money and handles post-sale support under its
+        privacy policy. We never collect your name, email, billing address or
+        card details.
+      </p>
+
+      <h3 id="p6">6. Your rights</h3>
+      <p>
+        Delete everything by uninstalling the app, or use <strong>START OVER
+        FROM ZERO</strong> in the Agency (wipes Agency progress, the saved run
+        and the score boards; imported datasets stay until you delete them in
+        the dataset manager). The game holds no personal data of its own, so
+        there is no off-device record to amend, export or delete — the ad data
+        belongs to Google, controlled as in §3.
+      </p>
+
+      <h3 id="p7">7. Children</h3>
+      <p>
+        Not directed at under-13s and not part of Play's Families programme; no
+        chat, social features or content visible to others.
+      </p>
+
+      <h3 id="p8">8. Security, changes &amp; contact</h3>
+      <p>
+        The only data is what your device stores, so its security is your
+        device's. Material changes show in the date at the top; questions go
+        through the game's Google Play listing.
+      </p>
+    </section>
+
+    <div class="summary">
+      <h2>Plain-language summary</h2>
+      <p>
+        The game keeps a few values on your device and ships no copyrighted
+        football content; what you import is yours to clear and use. It doesn't
+        phone home, set cookies or track you, and its one optional rewarded ad
+        plays only when you tap it.
+      </p>
+    </div>
+
+    <footer class="site-footer">
+      <p>Retro Soccer Dealer — an independent hobbyist game.</p>
+      <p>
+        Get it on
+        <a href="https://play.google.com/store/apps/details?id=com.mrhumildad.retrosoccerdealer" rel="noopener noreferrer">Google Play</a>
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>

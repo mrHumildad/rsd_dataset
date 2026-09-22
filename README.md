@@ -30,6 +30,9 @@ img/clubs/
 
 Do not add an extra folder level around these files when creating the final ZIP.
 
+Only the files listed above belong in the ZIP — see the note on `privacy.html`
+at the end of this file.
+
 ## ID relationships
 
 - `players.csv:player_id` is referenced by `market.csv:player_id` and `transfers.csv:player_id`.
@@ -38,3 +41,22 @@ Do not add an extra folder level around these files when creating the final ZIP.
 - Local club images use `img/clubs/{club_id}.png`.
 
 See `../DATASET_TEMPLATE_GUIDE.md` for the complete field reference and validation checklist.
+
+## Privacy policy (hosted here, not part of the template)
+
+`privacy.html` is the Terms of Service & Privacy Policy for the Retro Soccer
+Dealer Android app. It lives here because Google Play requires the policy at a
+public URL, and this repository is already public, so it can serve it without
+exposing the game's own repository:
+
+<https://mrhumildad.github.io/rsd_dataset/privacy.html>
+
+- **Source of truth:** `docs/LEGAL.md` in the game repo, which ships the same
+  page as `public/privacy.html`. Edit it there and copy it over — never the
+  other way round.
+- **The four icon files** beside it (`favicon.ico`, `favicon-32x32.png`,
+  `apple-touch-icon.png`, `android-chrome-192x192.png`) are used by that page
+  only. The page references them with relative paths so it renders correctly
+  when served from the `/rsd_dataset/` subpath.
+- **None of these files belong in `retro-soccer-dealer-dataset-template.zip`.**
+  The ZIP carries only the five CSVs and `img/`, per the layout above.
