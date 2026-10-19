@@ -50,8 +50,12 @@ player_id,date,from_team_id,from_team_name,to_team_id,to_team_name
 ### clubs.csv
 
 ```csv
-club_id,club_name,country_name
+club_id,club_name,country_name,club_short_name
 ```
+
+`club_short_name` is optional: a short club name shown on player cards when the
+full name doesn't fit (e.g. `Bayern`). When omitted, the app shortens the full
+name automatically and the tooltip always shows the full name.
 
 ## Important rules
 
@@ -64,4 +68,33 @@ club_id,club_name,country_name
 - Values must be numbers without currency symbols or commas.
 - Use original or properly licensed data and images.
 
-The blank template is intentionally not importable until these files contain valid data. See the repository-level `DATASET_TEMPLATE_GUIDE.md` and `DATASET_SPEC.md` for full details.
+## Before you publish: encrypt the ZIP
+
+Packs published in the community subreddit must be password-protected. It is not
+DRM (the password is public — it is in this guide), it just stops the accident
+that fills a player's phone gallery: tapping an encrypted ZIP in a file manager
+and hitting "extract" asks for a password instead of dumping every portrait into
+the gallery.
+
+**Password (all published packs):**
+
+```text
+rsd-community-pack
+```
+
+- **7-Zip (desktop)** — select everything in this folder (the 5 CSVs, `img` and
+  `.nomedia`), *Add to archive* → format **zip** → *Enter password*.
+- **ZArchiver (Android)** — select the files → **Compress** → format **zip** →
+  set the password.
+
+Choose **ZipCrypto** if your tool asks (it is 7-Zip's default). AES-256 works
+too, but a big pack installs about three times slower, because AES has to derive
+a key for every single file inside it.
+
+Keep the two `.nomedia` files the template ships. They are empty markers Android
+reads to skip a folder in the gallery, so even a player who extracts your pack
+with the password does not end up with its photos in their gallery. The game
+ignores them on import, and unencrypted packs still import too (older packs stay
+installable), so encrypting is purely about keeping the community's packs tidy.
+
+The blank template is intentionally not importable until these files contain valid data. See `README.md` for the ZIP layout and publishing notes.

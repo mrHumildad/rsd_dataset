@@ -24,6 +24,8 @@ players.csv
 market.csv
 transfers.csv
 clubs.csv
+.nomedia
+img/.nomedia
 img/players/
 img/clubs/
 ```
@@ -33,6 +35,22 @@ Do not add an extra folder level around these files when creating the final ZIP.
 Only the files listed above belong in the ZIP — see the note on `privacy.html`
 at the end of this file.
 
+The two `.nomedia` files are empty markers Android's media scanner reads: a
+folder containing one (and its subfolders) is skipped by the gallery. Keep them
+in the ZIP you publish, so a player who extracts the pack does not get its
+portraits in their photo gallery. The game ignores them on import.
+
+## Encrypt the ZIP before publishing
+
+Password-protect the ZIP you upload with the pack password below (see
+`DATASET_TEMPLATE_GUIDE.md` for the 7-Zip / ZArchiver steps). Players who tap
+the ZIP in a file manager then get a password prompt instead of an accidental
+extraction into their gallery.
+
+```text
+rsd-community-pack
+```
+
 ## ID relationships
 
 - `players.csv:player_id` is referenced by `market.csv:player_id` and `transfers.csv:player_id`.
@@ -40,7 +58,7 @@ at the end of this file.
 - Local player images use `img/players/{player_id}.jpg` or `.png`.
 - Local club images use `img/clubs/{club_id}.png`.
 
-See `../DATASET_TEMPLATE_GUIDE.md` for the complete field reference and validation checklist.
+See `DATASET_TEMPLATE_GUIDE.md` for the complete field reference and validation checklist.
 
 ## Privacy policy (hosted here, not part of the template)
 
